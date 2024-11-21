@@ -9,5 +9,5 @@
 #
 class Board < ApplicationRecord
 
-  has_many(:posts, foreign_key: "board_id", class_name: "post")
+  has_many(:posts, foreign_key: "board_id", class_name: "Post")
 end

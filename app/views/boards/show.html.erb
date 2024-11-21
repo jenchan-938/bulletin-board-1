@@ -1,9 +1,5 @@
 
-
-
-    <h1><%= @the_board.name %> </h1>
-
-
+<h1><%= @the_board.name %> </h1>
 
 <div>
   <div>
@@ -30,7 +26,7 @@
       <div> 
         <button> Add post </button>
       </div>
-  </forum>
+  </form>
 
 
 
@@ -77,15 +73,15 @@
       </tr>
 
   
-      
-      <% @list_of_posts.each do |a_post| %>
+    
+      <% @the_board.posts.each do |a_post| %>
       <tr>
         <td> <%=a_post.title%> </td>
         <td> <%=a_post.body%> </td>
         <td> <%=a_post.expires_on%> </td>
         <td> <%=a_post.board_id%> </td>
-       
       </tr>
+        <%end%>
     </table>
   </div>
 </div>
