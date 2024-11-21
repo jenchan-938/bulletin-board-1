@@ -42,9 +42,23 @@
 
 <h2> Active post </h2>
  
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_board.created_at) %> ago
-      </dd>
+<div>
+
+    <table border ="1">
+      <tr>
+        <th> Title </th>
+        <th> Body </th>
+        <th> Posted on </th>
+        <th> Expired on </th>
+      </tr>
+
+      </tr>
+      
+      <%@list_of_posts.each do |a_post| %>
+      <tr>
+        <td> <%=a_post.title%> </td>
+        <td> <%=a_post.body%> </td>
+       
+      </tr>
+   
+</div>
