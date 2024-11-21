@@ -1,10 +1,8 @@
-<div>
-  <div>
-    <hr>
-    <h1>
-      <%= @the_board.name %>
-    </h1>
-<hr>
+
+
+
+    <h1><%= @the_board.name %> </h1>
+
 
 
 <div>
@@ -16,7 +14,7 @@
     <form action="/modify_board/<%= @the_board.id %>"  method="post" >
       <div>
         <label for="name_box"> Title </label>
-        <input type="text" id="name_box" name="query_name">
+        <input type="text" id="name_box" name="name">
       </div>
 
       <div>
@@ -42,8 +40,9 @@
 
 <h2> Active post </h2>
  
-<div>
 
+<div>
+  <div>
     <table border ="1">
       <tr>
         <th> Title </th>
@@ -52,13 +51,16 @@
         <th> Expired on </th>
       </tr>
 
-      </tr>
+  
       
-      <%@list_of_posts.each do |a_post| %>
+      <% @list_of_posts.each do |a_post| %>
       <tr>
         <td> <%=a_post.title%> </td>
         <td> <%=a_post.body%> </td>
+        <td> <%=a_post.expires_on%> </td>
+        <td> <%=a_post.board_id%> </td>
        
       </tr>
-   
+    </table>
+  </div>
 </div>
