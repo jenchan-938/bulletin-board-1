@@ -23,6 +23,10 @@
         <input type="date" id="expired" name="expired">
       </div>
 
+      <div>
+        <input type="hidden" id="board_id" name="board_id" value="<%=@the_board.id%>"> #this will help assign the board_id to the unique post
+      </div>
+      
       <div> 
         <button> Add post </button>
       </div>
@@ -46,7 +50,7 @@
 
   
     
-      <% @the_board.posts.each do |a_post| %>
+      <% @the_board.posts.where("expires_on > ?",Date.today).each do |a_post| %>
       <tr>
         <td> <%=a_post.title%> </td>
         <td> <%=a_post.body%> </td>
