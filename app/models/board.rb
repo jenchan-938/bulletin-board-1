@@ -10,4 +10,6 @@
 class Board < ApplicationRecord
 
   has_many(:posts, foreign_key: "board_id", class_name: "Post")
+
+  validates(:name, {presence => true, :uniqueness => true})
 end
