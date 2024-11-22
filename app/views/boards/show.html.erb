@@ -1,5 +1,11 @@
 
-<h1><%= @the_board.name %> </h1>
+<div>
+  <div>
+    <h1>
+      <%= @the_board.name %>
+    </h1>
+  </div>
+</div>
 
 <div>
   <div>
@@ -81,8 +87,9 @@
       <tr>
         <td> <%=a_post.title%> </td>
         <td> <%=a_post.body%> </td>
-        <td> <%=a_post.expires_on%> </td>
-        <td> <%=a_post.board_id%> </td>
+        <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
+        <td> <%=a_post.expires_onstrftime("%b %e, %Y")%> </td>
+       
       </tr>
         <%end%>
     </table>
